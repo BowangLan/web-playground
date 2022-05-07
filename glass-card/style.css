@@ -1,0 +1,252 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', 'Didot', Roboto, 'Helvetica';
+}
+
+:root {
+    --a: 0.5;
+}
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    background-image: url('https://unsplash.com/photos/oQl0eVYd_n8/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjUxNDcyOTI0&force=true&w=1920');
+    background-size: cover;
+    overflow-y: scroll;
+    /* background: linear-gradient(180deg, rgb(156, 156, 156) 0%, rgb(91, 91, 91) 100%); */
+}
+
+main {
+    padding: 0 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    height: 28rem;
+}
+
+.black-canvas {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+    display: none;
+}
+
+.glass-card-container {
+    position: relative;
+    width: 27rem;
+    min-height: 16rem;
+    padding: 1.5rem;
+    display: flex;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 1.2rem;
+    color: white;
+    font-size: 2rem;
+    overflow: hidden;
+    transition: all 0.5s;
+    z-index: 1;
+}
+
+.card-center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 100;
+}
+
+.g1 {
+    background: linear-gradient(35deg, rgba(104, 43, 170, var(--a)) 0%, rgba(31, 177, 77, var(--a)) 100%);
+}
+
+.g2 {
+    background: linear-gradient(35deg, rgba(218, 76, 28, var(--a)) 0%, rgba(177, 31, 158, var(--a)) 100%);
+}
+
+.g3 {
+    background: linear-gradient(35deg, rgba(33, 113, 192, var(--a)) 0%, rgba(177, 119, 31, var(--a)) 100%);
+}
+
+.glass-card-container:hover {
+    transition: transform 150ms;
+    z-index: 100;
+}
+
+.card-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+    transition: all 0.5s;
+}
+
+.p {
+    font-size: 1rem;
+}
+
+.top-left {
+    font-size: 1.5rem;
+}
+
+.left-bottom {
+    position: absolute;
+    left: 1.5rem;
+    bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.bank-font {
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 1rem;
+}
+
+.card-number {
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.date {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    margin-left: 4rem;
+    color: rgb(217, 217, 217);
+    font-size: 1.15rem;
+    font-weight: 600;
+    /* letter-spacing: 2px; */
+}
+
+.amount {
+    position: absolute;
+    right: 1.5rem;
+    top: 40%;
+    font-size: 2.25rem;
+    letter-spacing: 0.2rem;
+    /* font-weight: 600; */
+}
+
+.name {
+    font-size: 1.15rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+
+.visa {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    display: inline-block;
+}
+
+.visa svg {
+    width: 85px;
+    height: 85px;
+    transform: translateY(-25px);
+}
+
+/* -----Circles----- */
+
+.circle-center {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+}
+
+.circle-1,
+.circle-2,
+.circle-3,
+.circle-4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+}
+
+.circle-1 {
+    --circle-size-1: 13rem;
+    background: rgba(121, 96, 180, var(--a));
+    width: var(--circle-size-1);
+    height: var(--circle-size-1);
+    top: calc(var(--circle-size-1) * -0.5);
+    left: calc(var(--circle-size-1) * -0.5);
+    border-radius: 50%;
+    z-index: -10;
+}
+
+.circle-2 {
+    --circle-size-2: 26rem;
+    background: rgba(94, 83, 133, 0.8);
+    width: var(--circle-size-2);
+    height: var(--circle-size-2);
+    top: calc(var(--circle-size-2) * -0.5);
+    left: calc(var(--circle-size-2) * -0.5);
+    border-radius: 50%;
+    z-index: -20;
+}
+
+.circle-3 {
+    --circle-size-3: 39rem;
+    background: rgba(62, 63, 89, 1);
+    width: var(--circle-size-3);
+    height: var(--circle-size-3);
+    top: calc(var(--circle-size-3) * -0.5);
+    left: calc(var(--circle-size-3) * -0.5);
+    border-radius: 50%;
+    z-index: -30;
+}
+
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.w-full {
+    width: 100%;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.full {
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width: 768px) {
+    main {
+        flex-direction: row;
+    }
+}
+
+@keyframes to-center {
+    100% {
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+}
